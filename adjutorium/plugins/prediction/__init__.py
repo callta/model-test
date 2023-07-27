@@ -3,7 +3,7 @@ from typing import Any, Generator, List, Type, Union
 
 # adjutorium absolute
 from adjutorium.plugins.prediction.classifiers import Classifiers
-# from adjutorium.plugins.prediction.risk_estimation import RiskEstimation
+from adjutorium.plugins.prediction.risk_estimation import RiskEstimation
 
 # adjutorium relative
 from .base import PredictionPlugin  # noqa: F401,E402
@@ -14,12 +14,12 @@ class Predictions:
         self._category = category
 
         self._plugins: Classifiers
-        # self._plugins: Union[Classifiers, RiskEstimation]
+        self._plugins: Union[Classifiers, RiskEstimation]
 
         if category == "classifier":
             self._plugins = Classifiers()
-        # elif category == "risk_estimation":
-            # self._plugins = RiskEstimation()
+        elif category == "risk_estimation":
+            self._plugins = RiskEstimation()
         else:
             raise ValueError(f"unsupported category {category}")
 
