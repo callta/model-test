@@ -13,7 +13,6 @@ class Predictions:
     def __init__(self, category: str = "classifier") -> None:
         self._category = category
 
-        self._plugins: Classifiers
         self._plugins: Union[Classifiers, RiskEstimation]
 
         if category == "classifier":

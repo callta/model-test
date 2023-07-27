@@ -13,7 +13,7 @@ from sklearn.metrics import (
     roc_curve,
 )
 from sklearn.preprocessing import label_binarize
-# from sksurv.metrics import brier_score, concordance_index_ipcw
+from sksurv.metrics import brier_score, concordance_index_ipcw
 
 # adjutorium absolute
 import adjutorium.logger as log
