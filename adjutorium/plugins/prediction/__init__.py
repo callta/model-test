@@ -13,12 +13,13 @@ class Predictions:
     def __init__(self, category: str = "classifier") -> None:
         self._category = category
 
-        self._plugins: Union[Classifiers, RiskEstimation]
+        self._plugins: Classifiers
+        # self._plugins: Union[Classifiers, RiskEstimation]
 
         if category == "classifier":
             self._plugins = Classifiers()
-        elif category == "risk_estimation":
-            self._plugins = RiskEstimation()
+        # elif category == "risk_estimation":
+            # self._plugins = RiskEstimation()
         else:
             raise ValueError(f"unsupported category {category}")
 
